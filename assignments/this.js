@@ -28,10 +28,6 @@ console.log(sayPhrase(`Thomas`));
 const family = {
     father: "Thomas",
     mother: "Megan",
-    oldestDaughter: "Chloe",
-    oldestSon: "James",
-    youngestDaughter: "Hailey",
-    youngestSon: "Adam",
     familyRelations: function() {
         return `${this.father} and ${this.mother} are the parents of...`
     }
@@ -51,12 +47,18 @@ function FamilyMember(attributes) {
     console.log(this);
 }
 
+FamilyMember.prototype.future = function() {
+    return `Right now ${this.name} is currently a ${this.occupation} but is working to be a ${this.goals}`;
+}
+
+
 const mom = new FamilyMember({
     age: 29,
     name: "Megan",
     occupation: "SAHM",
     goals: "future kick-ass web dev"
 });
+
 
 const dad = new FamilyMember({
     age: 30,
